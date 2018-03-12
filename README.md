@@ -2,7 +2,7 @@
 
 It's a self-learning app used in a udacity course.
 
-It shows a list of popular movies and highest ranking ones as well.
+It shows a list of popular movies ,highest ranking movies and your own favourite ones.
 
 ## Todo(s) inside Project
 
@@ -12,7 +12,7 @@ It shows a list of popular movies and highest ranking ones as well.
 
 ## Current Stage
 
-Stage 1
+Stage 2
 
 ## Libraries Used (other than android.support)
 
