@@ -2,7 +2,7 @@
 
 It's a self-learning app used in a udacity course.
 
-It shows a list of popular movies ,highest ranking movies and your own favourite ones.
+It shows a list of popular movies, highest ranking movies and your own favourite ones.
 
 ## Todo(s) inside Project
 
