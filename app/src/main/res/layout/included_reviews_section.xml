@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout
+            android:id="@+id/headerLinearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            android:layout_margin="8dp"
+            tools:ignore="UseCompoundDrawables"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/reviewsLabel"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
+                android:text="@string/reviews_label"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/collapseReviewsImageView"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+
+                android:contentDescription="@string/hide_reviews_section"
+
+                android:tint="@color/colorPrimary"
+                android:src="@drawable/ic_indeterminate_check_box_black_24dp"/>
+
+        </LinearLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/forVisibilityConstraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headerLinearLayout">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/reviewsRecyclerView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_margin="8dp"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <!-- Recycler View Loading Progress Bar -->
+
+            <ProgressBar
+                android:id="@+id/reviewsLoadingProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                android:visibility="invisible"/>
+
+            <!-- Recycler View Empty View -->
+
+            <TextView
+                android:id="@+id/reviewsEmptyView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_margin="16dp"
+
+                android:text="@string/there_is_no_reviews_found"
+                android:textColor="@android:color/black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                android:visibility="invisible"/>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/no_internet_connection_constraint_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+
+                android:background="@android:color/holo_red_light"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                android:visibility="invisible">
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/vertical_guide_20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.2"/>
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/vertical_guide_75"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.75"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/no_internet_connection_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:text="@string/no_internet_connection"
+                    android:padding="16dp"
+                    app:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    app:autoSizeTextType="uniform"
+                    android:maxLines="1"
+
+                    app:layout_constraintLeft_toLeftOf="@id/vertical_guide_20"
+                    app:layout_constraintRight_toRightOf="@id/vertical_guide_75"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+
+                    android:src="@drawable/ic_cloud_off_black_24dp"
+                    android:padding="8dp"
+                    android:contentDescription="@string/no_internet_connection"
+
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="@id/vertical_guide_20"
+                    app:layout_constraintTop_toTopOf="@id/no_internet_connection_text"
+                    app:layout_constraintBottom_toBottomOf="@id/no_internet_connection_text"/>
+
+                <!-- All AppCompatTextViews used in this app to be able
+                 to use autoSizeTextType and fontFamily attributes -->
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/refresh_internet_connection"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:text="@string/refresh"
+                    app:fontFamily="sans-serif-condensed"
+                    android:textColor="#0D47A1"
+                    android:textStyle="bold"
+                    android:padding="8dp"
+                    android:background="@drawable/refresh_internet_connection_text_selector"
+
+                    android:gravity="center_vertical"
+                    app:autoSizeTextType="uniform"
+                    android:maxLines="1"
+
+                    app:layout_constraintLeft_toLeftOf="@id/vertical_guide_75"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/no_internet_connection_text"
+                    app:layout_constraintBottom_toBottomOf="@id/no_internet_connection_text"/>
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

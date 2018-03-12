@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- making padding inside the drawable due to better looking -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@color/colorPrimaryLight"/>
+
+    <item android:top="10dp" android:bottom="10dp"
+        android:right="10dp" android:left="10dp"
+        android:drawable="@drawable/ic_error_black_24dp"/>
+
+</layer-list>

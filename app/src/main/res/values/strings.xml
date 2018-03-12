@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+
+    <!-- @layout/activity_main -->
+    <string name="refresh">Refresh</string>
+    <!-- Also used as content description -->
+    <string name="no_internet_connection">No Internet Connection</string>
+    <string name="no_movies_found">No Movies Found</string>
+
+    <!-- Main Activity Class -->
+    <string name="popular_movies_title">Popular Movies</string>
+    <string name="top_rated_movies_title">Top Rated Movies</string>
+    <string name="unknown_movies_category_title">Unknown Movies Category</string>
+    <string name="favourite_movies_title">Favourite movies</string>
+
+    <!-- @layout/activity_movie_details -->
+    <string name="release_date_label">Release Date</string>
+    <string name="rating_label">Rating</string>
+    <string name="trailers_label">Trailers</string>
+    <string name="reviews_label">Reviews</string>
+    <string name="add_to_favourites">Add To Favourites</string>
+    <string name="remove_from_favourites">Remove From Favourites</string>
+
+    <!-- Movie Details Activity -->
+    <string name="movie_added_to_favourites_successfully">Movie Added to Favourites Successfully</string>
+    <string name="movie_removed_from_favourites_successfully">Movie Removed From Favourites Successfully</string>
+
+    <!-- @layout/included_trailers_section -->
+    <string name="there_is_no_trailers_found">"There's no trailers found."</string>
+    <string name="there_is_no_reviews_found">"There's no reviews found."</string>
+
+    <!-- Content Descriptions -->
+    <string name="movie_poster_image">Movie Poster Image</string>
+    <string name="movie_star_rating">Movie Star Rating</string>
+    <string name="play_movie_trailer">Play Movie Trailer</string>
+    <string name="hide_trailers_section">Hide Trailers Section</string>
+    <string name="hide_reviews_section">Hide Reviews Section</string>
+
+    <!-- In Manifest -->
+    <string name="activity_movie_details_label">Movie Details</string>
+
+    <!-- @menu/menu_main_activity --> <!-- and as label of SettingsActivity in manifest -->
+    <string name="settings">Settings</string>
+
+    <!-- @menu/menu_movie_details_activity -->
+    <string name="update">Update</string>
+    <string name="share">Share</string>
+
+    <!-- @layout/dialog_trailer_share_chooser -->
+    <string name="cancel">Cancel</string>
+    <string name="select_trailer_url_to_share">Select Trailer URL to Share</string>
+
+    <!-- Preferences xml directory -->
+
+    <!-- sort movies by list preference -->
+    <string name="sort_movies_by_title">Sort Movies By</string>
+    <string name="sort_movies_by_key" translatable="false">sort_movies_by_key</string>
+    <string name="popular_label">Popular</string>
+    <string name="top_rated_label">Top Rated</string>
+    <string name="favourite_label">Favourite</string>
+    <string name="popular_value" translatable="false">popular_value</string>
+    <string name="top_rated_value" translatable="false">top_rated_value</string>
+    <string name="favourite_value" translatable="false">favourite_value</string>
+
+    <!-- columns in portrait editText preference -->
+    <string name="columns_in_portrait_title">Columns in Portrait</string>
+    <string name="columns_in_portrait_key">columns_in_portrait_key</string>
+    <string name="columns_in_portrait_default">3</string>
+
+    <!-- columns in portrait editText preference -->
+    <string name="columns_in_landscape_title">Columns in Landscape</string>
+    <string name="columns_in_landscape_key">columns_in_landscape_key</string>
+    <string name="columns_in_landscape_default">4</string>
+
+    <!-- NOTE
+     Didn't use error messages in the app as resources here as my mentor says it's ok
+     to keep them hardcoded.
+     PLUS -> they make no errors in lint as well.
+     -->
+
+</resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.android.popularmovies">
+
+    <!-- to get data from API requests -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- MainActivity isCurrentlyOnline() -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!--
+     ic_movie_launcher ==> Got from https://www.iconfinder.com/icons/51928/movie_icon
+     Note ==> Licensed for commercial projects found in it's home Page ==> https://www.iconfinder.com
+     so It is for free + I used my own PhotoShop to make different 5 sizes (xxxhdpi and others)
+    -->
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_movies_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_movies_launcher_circular"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MovieDetailsActivity"
+            android:label="@string/activity_movie_details_label"
+            android:parentActivityName=".MainActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <!--
+        TODO PLEASE, PUT INTO CONSIDERATION READING BELOW COMMENT
+        if you use in gradle any version below 27.0.2 and keep rotating SettingsActivity
+        an error that will crash the app will occur that's why i use 27.0.2 or higher
+        the error called IllegalStateException: Fragment has not been attached yet.
+        android developers link says it is common issue & using 27.0.2 or higher will fix that bug
+        link -> https://developer.android.com/topic/libraries/support-library/revisions.html#27-0-2
+        -->
+        <activity android:name=".SettingsActivity"
+            android:label="@string/settings"
+            android:parentActivityName=".MainActivity">
+
+        <!-- Parent activity meta-data to support 4.0 and lower -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
+        </activity>
+
+        <provider
+            android:authorities="com.example.android.popularmovies"
+            android:name=".data.FavContentProvider"
+            android:exported="false"/>
+
+        <service android:name=".intentServices.UpdateMovieInFavouritesIntentService"
+            android:exported="false" />
+    </application>
+
+</manifest>
